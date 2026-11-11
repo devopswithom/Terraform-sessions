@@ -4,8 +4,14 @@ provider "aws" {
 
 resource "aws_instance" "test-instance"{
        ami           =    "ami-0d97d7f07b25dd693"
-       instance_type =    "t3.micro"
+       instance_type =    var.instance_type
        tags          = {
                  Name = "ec2-terraform-demo"
        } 
 }
+
+
+
+
+
+
