@@ -19,10 +19,21 @@ variable "enable_public_ip" {
     default   =   true
 }
 
-variable "user_names" {
-  description = "usernames"
-  type        = list(string)
-  default     = ["user1", "user2", "user3"]
+# variable "user_names" {
+#   description = "usernames"
+#   type        = list(string)
+#   default     = ["user1", "user2", "user3"]
+# }
+
+
+variable "tag_name" {
+  description = "Tagging the instance"  
+  type        = map(string)
+  default = {
+    project = "demo"
+    env = "test"
+    
+  }
 }
 
 

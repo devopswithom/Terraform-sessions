@@ -8,16 +8,14 @@ resource "aws_instance" "test-instance"{
        count         =    var.instance_count   
        associate_public_ip_address  = var.enable_public_ip
       
-       tags          = {
-                 Name = "ec2-terraform-demo"
-       } 
+       tags          =   var.tag_name
 }
 
-resource "aws_iam_user" "Creating_users" {
-     count  = length(var.user_names)
-     name   =  var.user_names[count.index]
+# resource "aws_iam_user" "Creating_users" {
+#      count  = length(var.user_names)
+#      name   =  var.user_names[count.index]
   
-}
+# }
 
 
 
